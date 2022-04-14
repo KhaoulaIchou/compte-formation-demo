@@ -9,4 +9,9 @@ class formation extends Model
 {
     use HasFactory;
     protected $fillable = ['designation', 'image', 'description', 'fichier', 'compte_id'];
+
+    public function compte()
+    {
+        return $this->belongsTo(compte::class, 'compte_id');
+    }
 }
